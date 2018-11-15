@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="getProductById">
+        	<![CDATA[
+                SELECT
+                	idgoods AS idgoods,
+                	goodsname AS goodsname,
+                	price AS price,
+                	weight AS weight,
+                	instock AS instock,
+                	volume AS volume,
+                	goodsparameters AS goodsparameters
+                FROM goods
+                WHERE idgoods = :id
+        	]]>
+	</entry>
+
+		<entry key="getAllProducts">
+        	<![CDATA[
+                SELECT
+                	idgoods AS idgoods,
+                	goodsname AS goodsname,
+                	price AS price,
+                	weight AS weight,
+                	instock AS instock,
+                	volume AS volume,
+                	goodsparameters AS goodsparameters
+                FROM goods
+        	]]>
+	</entry>
+
+	<entry key="getAllSaledProducts">
+		<![CDATA[
+                SELECT
+                	product AS idgoods,
+                	sum(count) AS totalsaled
+                FROM orders
+                GROUP BY
+                	product
+                ORDER BY
+                	sum(count)
+        	]]>
+	</entry>
+
+</properties>

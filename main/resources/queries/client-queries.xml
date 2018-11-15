@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+
+	<entry key="getClientById">
+        	<![CDATA[
+                SELECT
+                	idClients AS idClients,
+                	name AS name,
+                	surname AS surname,
+                	email AS email,
+                	password AS password,
+                	dateofbirth AS dateofbirth,
+                	roles AS roles,
+                	idadress AS idadress
+                FROM clients
+                WHERE idClients = :id
+        	]]>
+	</entry>
+
+	<entry key="getClientByName">
+		<![CDATA[
+                SELECT
+                	idClients AS idClients,
+                	name AS name,
+                	surname AS surname,
+                	email AS email,
+                	password AS password,
+                	dateofbirth AS dateofbirth,
+                	roles AS roles,
+                	idadress AS idadress
+                FROM clients
+                WHERE name = :name
+        	]]>
+	</entry>
+
+	<entry key="getAllClients">
+        	<![CDATA[
+                SELECT
+                	idClients AS idClients,
+                	name AS name,
+                	surname AS surname,
+                	email AS email,
+                	password AS password,
+                	dateofbirth AS dateofbirth,
+                	roles AS roles,
+                	idadress AS idadress
+                FROM clients
+        	]]>
+	</entry>
+
+	<entry key="getAdressById">
+		<![CDATA[
+                SELECT
+                	country AS country,
+        			postalcode AS postalcode,
+        			city AS city,
+        			house AS house,
+        			flat AS flat,
+        			street AS street
+                FROM clientadress
+                WHERE idclientadress = :idclientadress
+        	]]>
+	</entry>
+
+	<entry key="getOrdersByClient">
+		<![CDATA[
+                SELECT
+					client AS client_Id,
+					product AS product_Id,
+					ordernumber AS ordernumber,
+					iscash AS iscash,
+					delivery AS delivery,
+					ispaid AS ispaid,
+					count AS count
+                FROM orders
+                WHERE client = :idclient
+        	]]>
+	</entry>
+
+</properties>

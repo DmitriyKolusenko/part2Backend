@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!--     <bean id="simpleService" class="com.tsystems.services.impl.SimpleServiceImpl" init-method="init" destroy-method="destroy">
+        <constructor-arg name="simpleDomainModel">
+            <bean class="com.tsystems.domain.SimpleDomainModel" init-method="init" destroy-method="destroy">
+                <constructor-arg name="constructorField">
+                    <value>constructor message</value>
+                </constructor-arg>
+                <property name="setterField" value="setter message"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <bean id="lazyService" class="com.tsystems.services.impl.LazyServiceImpl" lazy-init="true">
+    </bean>
+
+    <bean id="parentAbstractService" class="com.tsystems.services.AbstractService" abstract="true">
+        <property name="message" value="Some message in abstract service"/>
+    </bean>
+
+    <bean id="childAbstractService" parent="parentAbstractService"/>
+
+    <bean id="prototypeBean" scope="prototype" class="com.tsystems.domain.PrototypeDomainModel" init-method="init" destroy-method="destroy"/>
+
+    <bean class="com.tsystems.postprocessors.SimpleServiceBeanPostProcessor"/>
+    <bean class="com.tsystems.listeners.ApplicationContextRefreshedApplicationListener"/> -->
+    
+    <context:component-scan base-package="com.tsystems.tshop"/>
+    
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+</beans>
